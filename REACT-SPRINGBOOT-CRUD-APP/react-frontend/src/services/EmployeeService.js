@@ -8,6 +8,12 @@ class EmployeeService {
         return axios.get(EMPLOYEE_API_BASR_URL);
     }
 
+    createEmployee(employee){
+        return axios.post(EMPLOYEE_API_BASR_URL, employee);
+    }
+
 }
+
+
 
 export default new EmployeeService()
