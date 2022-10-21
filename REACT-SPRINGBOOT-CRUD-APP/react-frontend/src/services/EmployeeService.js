@@ -12,6 +12,10 @@ class EmployeeService {
         return axios.post(EMPLOYEE_API_BASR_URL, employee);
     }
 
+    getEmployeeById(employeeId){
+        return axios.get(EMPLOYEE_API_BASR_URL + '/' + employeeId);
+    }
+
 }
 
 
