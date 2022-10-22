@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { generatePath } from 'react-router-dom';
 import EmployeeService from '../services/EmployeeService';
 
 class ListEmployeeComponent extends Component {
@@ -20,8 +19,14 @@ class ListEmployeeComponent extends Component {
         });
     }
 
+    viewEmployee(id) {
+        this.props.history.push(`/view-employee/${id}`);
+    }
+
+
     editEmployee(id) {
-        this.props.history.push(generatePath('/add-employee/:id', { id }));
+        /*this.props.history.push(generatePath('/add-employee/:id', { id }));*/
+        this.props.history.push(`/add-employee/${id}`); /*Use baskstick*/
     }
 
     componentDidMount() {
@@ -64,6 +69,7 @@ class ListEmployeeComponent extends Component {
                                             <td>
                                                 <button onClick={() => this.editEmployee(employee.id)} className="btn btn-info">Update</button>
                                                 <button style={{ marginLeft: "10px" }} onClick={() => this.deleteEmployee(employee.id)} className="btn btn-danger">Delete</button>
+                                                <button style={{ marginLeft: "10px" }} onClick={() => this.viewEmployee(employee.id)} className="btn btn-info">View</button>
                                             </td>
                                         </tr>
                                 )
