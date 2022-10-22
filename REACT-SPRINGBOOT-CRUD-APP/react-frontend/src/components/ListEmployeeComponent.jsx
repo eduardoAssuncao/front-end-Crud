@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { generatePath } from 'react-router-dom';
 import EmployeeService from '../services/EmployeeService';
 
 class ListEmployeeComponent extends Component {
@@ -13,7 +14,7 @@ class ListEmployeeComponent extends Component {
     }
 
     editEmployee(id) {
-        this.props.history.push('/update-employee/${id}');
+        this.props.history.push(generatePath('/update-employee/:id', { id }));
     }
 
     componentDidMount() {

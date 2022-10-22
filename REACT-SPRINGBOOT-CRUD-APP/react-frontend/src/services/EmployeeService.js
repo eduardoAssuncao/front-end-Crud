@@ -16,6 +16,10 @@ class EmployeeService {
         return axios.get(EMPLOYEE_API_BASR_URL + '/' + employeeId);
     }
 
+    updateEmployee(employee, employeeId){
+        return axios.put(EMPLOYEE_API_BASR_URL + '/' + employeeId, employee);
+    }
+
 }
 
 
