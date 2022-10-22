@@ -20,6 +20,10 @@ class EmployeeService {
         return axios.put(EMPLOYEE_API_BASR_URL + '/' + employeeId, employee);
     }
 
+    deleteEmployee(employeeId){
+        return axios.delete(EMPLOYEE_API_BASR_URL + '/' + employeeId);
+    }
+
 }
 
 
